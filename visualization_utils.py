@@ -322,7 +322,7 @@ def draw_mask_on_image_array(image, mask, color='red', alpha=0.7):
 
 def get_input():
 	global obj
-	#obj = raw_input("Put yo shizz: ")
+	#obj = raw_input("Put yo shizz: ") 
 	r = sr.Recognizer()
 	with sr.Microphone() as source:
     		print("Say something!")
@@ -339,6 +339,7 @@ def get_input():
     		print("Google Speech Recognition could not understand audio")
 	except sr.RequestError as e:
     		print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
 
 def visualize_boxes_and_labels_on_image_array(image,
                                               boxes,
@@ -440,6 +441,7 @@ def visualize_boxes_and_labels_on_image_array(image,
         thickness=line_thickness,
         display_str_list=box_to_display_str_map[box],
         use_normalized_coordinates=use_normalized_coordinates)
+
     if keypoints is not None:
       draw_keypoints_on_image_array(
           image,
@@ -447,3 +449,10 @@ def visualize_boxes_and_labels_on_image_array(image,
           color=color,
           radius=line_thickness / 2,
           use_normalized_coordinates=use_normalized_coordinates)
+
+
+    if class_name == obj:
+	if (xmin + xmax)/2  <  0.3 :
+		print("right")
+    	elif (xmin + xmax)/2  >  0.7 :
+		print("left") 
