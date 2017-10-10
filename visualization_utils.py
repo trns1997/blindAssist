@@ -406,8 +406,8 @@ def visualize_boxes_and_labels_on_image_array(image,
             class_name = category_index[classes[i]]['name']
 	    if class_name == 'person':
 		break
-	    elif class_name == obj:
-		print("Found " + obj)
+	    #elif class_name == obj:
+		#print("Found " + obj)
           else:
             class_name = 'N/A'
           display_str = '{}: {}%'.format(
