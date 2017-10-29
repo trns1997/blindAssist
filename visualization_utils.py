@@ -326,10 +326,11 @@ def draw_mask_on_image_array(image, mask, color='red', alpha=0.7):
 
 def get_input():
 	global obj
-	obj = raw_input("Put yo shizz: ") 
-'''
+	#obj = raw_input("Put yo shizz: ") 
+	bs = urllib2.urlopen("https://10.89.115.83:8080/audio.wav", context=context)
+
 	r = sr.Recognizer()
-	with sr.Microphone() as source:
+	with sr.WavFile(bs) as source:
     		print("Say something!")
     		audio = r.listen(source)
  
@@ -344,7 +345,7 @@ def get_input():
     		print("Google Speech Recognition could not understand audio")
 	except sr.RequestError as e:
     		print("Could not request results from Google Speech Recognition service; {0}".format(e))
-'''
+
 
 def visualize_boxes_and_labels_on_image_array(image,
                                               boxes,
