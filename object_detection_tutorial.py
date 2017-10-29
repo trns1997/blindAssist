@@ -29,7 +29,9 @@ def on_release(key):
     if key == keyboard.Key.ctrl:
         vis_util.get_input()
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture()
+# Opening the link
+cap.open("https://10.89.115.83:8080/video?.mjpeg")   
 
 # ## Env setup
 
@@ -140,7 +142,7 @@ PATH_TO_TEST_IMAGES_DIR = 'test_images'
 TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(1, 3) ]
 
 # Size, in inches, of the output images.
-IMAGE_SIZE = (12, 8)
+IMAGE_SIZE = (8, 12)
 
 def user_input():
 	with keyboard.Listener(
@@ -179,7 +181,7 @@ def detection():
 		  use_normalized_coordinates=True,
 		  line_thickness=8)
 
-	      cv2.imshow('detection', cv2.resize(image_np,(500,400)))
+	      cv2.imshow('detection', cv2.resize(image_np,(400,600)))
 	      if cv2.waitKey(25) & 0xFF == ord('q'):
 		cv2.destroyAllWindows()
 		break

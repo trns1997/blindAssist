@@ -28,6 +28,10 @@ import PIL.ImageFont as ImageFont
 import six
 import tensorflow as tf
 import speech_recognition as sr
+import urllib2
+import ssl
+
+context = ssl._create_unverified_context()
 
 
 _TITLE_LEFT_MARGIN = 10
@@ -322,7 +326,8 @@ def draw_mask_on_image_array(image, mask, color='red', alpha=0.7):
 
 def get_input():
 	global obj
-	#obj = raw_input("Put yo shizz: ") 
+	obj = raw_input("Put yo shizz: ") 
+'''
 	r = sr.Recognizer()
 	with sr.Microphone() as source:
     		print("Say something!")
@@ -339,7 +344,7 @@ def get_input():
     		print("Google Speech Recognition could not understand audio")
 	except sr.RequestError as e:
     		print("Could not request results from Google Speech Recognition service; {0}".format(e))
-
+'''
 
 def visualize_boxes_and_labels_on_image_array(image,
                                               boxes,
@@ -406,8 +411,11 @@ def visualize_boxes_and_labels_on_image_array(image,
             class_name = category_index[classes[i]]['name']
 	    if class_name == 'person':
 		break
-	    #elif class_name == obj:
-		#print("Found " + obj)
+	    elif class_name == obj:
+		urllib2.urlopen("https://10.89.115.83:8080/enabletorch", context=context)
+		print("Found " + obj)
+	    else:
+		urllib2.urlopen("https://10.89.115.83:8080/disabletorch", context=context)
           else:
             class_name = 'N/A'
           display_str = '{}: {}%'.format(
@@ -450,9 +458,10 @@ def visualize_boxes_and_labels_on_image_array(image,
           radius=line_thickness / 2,
           use_normalized_coordinates=use_normalized_coordinates)
 
-
+'''
     if class_name == obj:
 	if (xmin + xmax)/2  <  0.3 :
 		print("right")
     	elif (xmin + xmax)/2  >  0.7 :
 		print("left") 
+'''
