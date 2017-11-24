@@ -2,7 +2,7 @@
 
 This Repository is mainly to keep track of the team progress and share each others code swiftly.
 
--------------Object Detection-------------
+## -------------Object Detection-------------
 If you wish to try tensorflows object recognition API clone the following models from the repository linked below:
 https://github.com/tensorflow/models
 
@@ -11,7 +11,7 @@ https://github.com/tensorflow/models/blob/master/object_detection/g3doc/installa
 
 Once installed and cloned cd into models/research/object_detection/ and copy the object_detection_tutorial.py file from this repository to the models/research/object_detection/ directory and run it using python (python 2.7 is recommended)
 
--------------Video Streaming-------------
+## -------------Video Streaming-------------
 If you wish to try the Video streaming fucntionality just clone from the following repository: 
 https://github.com/log0/video_streaming_with_flask_example
 
