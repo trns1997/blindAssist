@@ -1,15 +1,7 @@
 # blindAssist
 
-This Repository is mainly to keep track of the team progress and share each others code swiftly.
-
-## -------------Object Detection-------------
-If you wish to try tensorflows object recognition API clone the following models from the repository linked below:
-https://github.com/tensorflow/models
-
-Follow the Installation instruction as shown in the link below:
-https://github.com/tensorflow/models/blob/master/object_detection/g3doc/installation.md
-
-Once installed and cloned cd into models/research/object_detection/ and copy the object_detection_tutorial.py file from this repository to the models/research/object_detection/ directory and run it using python (python 2.7 is recommended)
+This Branch is for video and audio streaming on the raspi.
+All credit goes to the creator of this repository https://github.com/log0/video_streaming_with_flask_example
 
 ## -------------Video Streaming-------------
 If you wish to try the Video streaming fucntionality just clone from the following repository: 
