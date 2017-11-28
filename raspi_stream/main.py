@@ -20,7 +20,7 @@ from camera import VideoCamera
 import audio
 from gpiozero import Button
 
-button = Button(2)
+button = Button(21)
 
 app = Flask(__name__)
 
@@ -52,4 +52,4 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, threaded=True)
+    app.run(host='0.0.0.0', threaded=True)
